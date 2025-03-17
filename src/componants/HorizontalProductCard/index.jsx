@@ -23,12 +23,6 @@ export const HorizontalProductCard = ({product}) => {
                </p>
           </div>
           <div className="quantity-container d-flex gap">
-               {/* <p className="q-title">Quantity: </p>
-               <div className="count-container d-flex align-center gap">
-                    <button className="count">-</button>
-                    <span className="count-value">1</span>
-                    <button className="count">+</button>
-               </div> */}
           </div>
           <div className="cta-btn d-flex gap">
                <div className="cta-btn">
