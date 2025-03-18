@@ -30,9 +30,28 @@ h1{
   cursor: pointer;
 }
 
-.login-container{
+.outer-container{
   display: flex;
   justify-content: center;
+}
+
+.notRegistered{
+  padding-top:20px;
+  justify-self:center;
+  cursor: pointer;
+  color:blue;
+  
+}
+
+.notRegistered:active{
+  color:red;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border:none;
 }
 form{
   display:flex;
@@ -48,6 +67,13 @@ form{
   width:80px;
   
 }
+
+.name{
+  display:flex;
+  flex-direction: column;
+  
+}
+
 .email{
   display:flex;
   flex-direction: column;

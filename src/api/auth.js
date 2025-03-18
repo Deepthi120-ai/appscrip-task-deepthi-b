@@ -7,7 +7,7 @@ export const userLogin = async(email, password) => { //To authenticate user and 
             email: email,
             password:password
         })
-        console.log(data);
+        //console.log(data);
         return data;
     }catch(err){
         return err

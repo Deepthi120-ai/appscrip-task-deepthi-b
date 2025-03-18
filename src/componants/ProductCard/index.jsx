@@ -7,11 +7,9 @@ export const ProductCard = ({product}) => {
     const { cart, cartDispatch } = useCart();
 
     const navigate = useNavigate();
-    //console.log('cart',cart, 'id', product.id);
 
     const isProductInCart = findProductInCart(cart, product.id);
-    //console.log(isProductInCart);
-    
+
     const onCartClick = (product) => {
         !isProductInCart?
         cartDispatch({

@@ -3,23 +3,22 @@ import { userLogin } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-
   const { loginDispatch, email, password } = useLogin();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const onFormSubmit = async(e) => {
+  const onFormSubmit = async (e) => {
     e.preventDefault(); //on clicking form by default, it reloads and all the data is lost, so use preventDefault
     const data = await userLogin(email, password);
     console.log(data);
     loginDispatch({
-        type: "TOKEN",
-        payload:{
-            token: data
-        }
-    })
-    console.log('access_token',data.access_token);
-    if(data.access_token){
-        navigate('/');
+      type: "TOKEN",
+      payload: {
+        token: data,
+      },
+    });
+    console.log("access_token", data.access_token);
+    if (data.access_token) {
+      navigate("/");
     }
   };
 
@@ -42,21 +41,26 @@ export const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <form onSubmit={onFormSubmit}>
-        <h2>Login</h2>
-        <div className="email">
-          <span>Email *</span>
-          <input onChange={onEmailChange} required />
+    <div className="outer-container">
+      <div className="container">
+        <form onSubmit={onFormSubmit}>
+          <h2>Login</h2>
+          <div className="email">
+            <span>Email *</span>
+            <input onChange={onEmailChange} required />
+          </div>
+          <div className="password">
+            <span>Password *</span>
+            <input onChange={onPasswordChange} type="password" required />
+          </div>
+          <div>
+            <button className="login-final-button">Login</button>
+          </div>
+        </form>
+        <div className="notRegistered" onClick={() => navigate("/auth/register")}>
+          Not registered? Signup here
         </div>
-        <div className="password">
-          <span>Password *</span>
-          <input onChange={onPasswordChange} type="password" required />
-        </div>
-        <div>
-          <button className="login-final-button">Login</button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
