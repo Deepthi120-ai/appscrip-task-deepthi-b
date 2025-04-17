@@ -1,0 +1,1 @@
+export const findProductInWishList = (wishlist, id) => wishlist?.wishlist?.length > 0 && wishlist.wishlist.some(product => product.id === id);//some returns true if condition matches, else false

@@ -4,18 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { CartProvider } from './context/cart-context';
+import { WishListProvider } from './context/wish-context';
 import { LoginProvider } from "./context/login-context";
+import { FilterProvider } from './context/filter-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter> {/*React won't know how to navigate between pages or track the history of the application.*/}
-      <CartProvider>
-        <LoginProvider>
-         <App />
-        </LoginProvider>
-      </CartProvider>
+      <WishListProvider>
+        <FilterProvider>
+          <LoginProvider>
+          <App />
+          </LoginProvider>
+          </FilterProvider>
+      </WishListProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

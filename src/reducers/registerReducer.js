@@ -15,5 +15,7 @@ export const registerReducer = (state, { type, payload }) => {
         ...state,
         password: payload.value,
       };
+    default:
+      return state
   }
 };

@@ -1,25 +1,23 @@
 import { Navbar } from "../../componants/Navbar";
-import { useCart } from "../../context/cart-context";
+import { useWishList } from "../../context/wish-context";
 import { HorizontalProductCard } from "../../componants/HorizontalProductCard";
-import { PriceDetails } from "../../componants/PriceDetails";
 
-export const Cart = () => {
+export const WishList = () => {
 
-    const { cart } = useCart();
+    const { wishlist } = useWishList();
 
     return (
         <>
             <Navbar />
             <main >
-                <h2>My Cart</h2>
+                <h2>My WishList</h2>
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"center", gap: "30px"}}>
                 <div style={{display:"flex", flexDirection:"column", alignItems:"center", gap:"10px", paddingTop:"13px"}}>
                 {
-                    cart.cart?.length > 0 ? cart.cart.map(product => <HorizontalProductCard key={product.id} product={product}/>) :
-                    <p>Cart is empty, add product to cart</p>
+                    wishlist.wishlist?.length > 0 ? wishlist.wishlist.map(product => <HorizontalProductCard key={product.id} product={product}/>) :
+                    <p>WishList is empty, add product to WishList</p>
                 }
                 </div>
-                <PriceDetails/>
                 </div>
 
             </main>

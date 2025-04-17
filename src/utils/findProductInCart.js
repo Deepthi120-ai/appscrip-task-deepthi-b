@@ -1,1 +1,0 @@
-export const findProductInCart = (cart, id) => cart?.cart?.length > 0 && cart.cart.some(product => product.id === id);//some returns true if condition matches, else false

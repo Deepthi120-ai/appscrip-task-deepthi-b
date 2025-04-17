@@ -1,41 +1,41 @@
+import { useWishList } from "../../context/wish-context";
+import { findProductInWishList } from "../../utils/findProductInWishList";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../context/cart-context";
-import { findProductInCart } from "../../utils/findProductInCart";
-
 export const ProductCard = ({product}) => {
-
-    const { cart, cartDispatch } = useCart();
 
     const navigate = useNavigate();
 
-    const isProductInCart = findProductInCart(cart, product.id);
+    const { wishlist, wishDispatch } = useWishList();
 
-    const onCartClick = (product) => {
-        !isProductInCart?
-        cartDispatch({
-            type:'ADD_TO_CART',
+    const isProductInWishList = findProductInWishList(wishlist, product.id);
+
+    const onWishClick = (product) => {
+        !isProductInWishList?
+        wishDispatch({
+            type:'ADD_TO_WISHLIST',
             payload: {product}
-        }) : navigate('/cart');
+        }) : wishDispatch({
+          type: 'REMOVE_FROM_WISHLIST',
+            payload: { id: product.id }
+        })
     }
     
     return (
-        <div className="card card-vertical d-flex direction-column relative shadow">
+ <div className="card">
      <div className="card-image-container">
-          <img className="card-image" src={product.images[0]} alt="shoes" />
+          <img className="card-image" src={product.image} alt="product-image" />
      </div>
      <div className="card-details">
           <div className="card-title">{product.title}</div>
-          <div className="card-description">
-               <p className="card-price">
-                  Rs. {product.price}
-               </p>
+          <div className="card-details-bottom">
+            <p className="auth-options">
+                <span className="card-signin-link" onClick={() => navigate('/auth/login')}><u>Sign in </u></span>
+                    or Create an account to see pricing
+            </p>
+            
+            <img className="card-wishlist" src={isProductInWishList?"./heart.png":"/wishlist.png"} onClick={() => onWishClick(product)} style={{height:"20px"}} alt="wishlist" /> 
           </div>
-          <div className="cta-btn">
-               <button onClick={() => onCartClick(product)} className="button btn-primary btn-icon cart-btn d-flex align-center justify-center gap cursor btn-margin">
-               <img src="/shopping_cart.png" style={{height:"20px"}} alt="cart" /> 
-                 Add To Cart
-               </button>
-          </div>
+          
      </div>
 </div>
     )

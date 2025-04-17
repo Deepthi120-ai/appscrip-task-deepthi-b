@@ -1,1 +1,0 @@
-export const getTotalCartAmount = (cart) => cart?.cart?.length > 0 && cart.cart.reduce((acc,cur) => acc + parseInt(cur.price,10) , 0);
