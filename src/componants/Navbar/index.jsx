@@ -42,7 +42,7 @@ export const Navbar = () => {
     return (
         <header>
             <div className="main-header">
-                <img src={`${process.env.PUBLIC_URL}/hamburger.png`} alt="menu" className="menu-icon" onClick={toggleMenu}/>
+                <img className="menu-icon" src={`${process.env.PUBLIC_URL}/hamburger.png`} alt="menu" onClick={toggleMenu}/>
                 <img className="logo" src={`${process.env.PUBLIC_URL}/square.png`} alt="logo"/> 
                 <h1 className="website-title">LOGO</h1>
                 <nav className="nav">

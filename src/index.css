@@ -82,10 +82,6 @@ header{
   word-break: break-word;
 }
 
-.products-body{
-  margin-left:40px;
-  margin-right:40px;
-}
 
 
 .filter-bar{
@@ -176,7 +172,7 @@ header{
 }
 .all{
   margin-bottom: 4px;
-   font-weight: bold;
+  font-weight: bold;
 }
 .select-link{
   background: none;
@@ -193,7 +189,7 @@ header{
 }
 
 .products-container.with-sidebar {
-  width: 75%;
+  width: 85%;
 }
 .products-container.full-width {
   width: 100%;
@@ -429,7 +425,8 @@ code {
   }
   .menu-icon {
     display: block; /* Show hamburger menu */
-    margin: 25px 0px;
+    margin-top: 25px;
+    margin-left:10px;
     height:30px;
     width:30px;
   }
