@@ -429,7 +429,7 @@ code {
   }
   .menu-icon {
     display: block; /* Show hamburger menu */
-    margin: 25px 15px ;
+    margin: 25px 0px;
     height:30px;
     width:30px;
   }
@@ -439,6 +439,7 @@ code {
   .nav-icon{
     height:30px;
     width:30px;
+    margin:25px 5px;
   }
   .login{
     display:none;
@@ -499,12 +500,12 @@ code {
     width:30vw;
   }
   .card-title{
-    width:10em;
+    width:7em;
     word-wrap:break-word;
     overflow:hidden;
   }
   .auth-options{
-    width:10em;
+    width:7em;
     word-wrap:break-word;
     overflow:hidden;
   }

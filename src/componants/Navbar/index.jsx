@@ -76,7 +76,7 @@ export const Navbar = () => {
                 <h4>SKILLS</h4>
                 <h4>STORIES</h4>
                 <h4>ABOUT</h4>
-                <h4 onClick={()=> navigate('/contact')}>CONTACT US</h4>
+                <h4>CONTACT US</h4>
             </div>
         </header>
         
