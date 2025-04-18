@@ -18,7 +18,10 @@ export const Footer = () => {
             <p>customercare@mettamuse.com</p>
   
             <h4>CURRENCY</h4>
-            <p>USD</p>
+            <div className="currency">
+              <img src={`${process.env.PUBLIC_URL}/usa.png`} alt="usa"/>
+              <p>USA</p>
+            </div>
             <small>
               Transactions will be completed in Euro and a currency reference is available on hover.
             </small>
