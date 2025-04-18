@@ -82,6 +82,10 @@ header{
   word-break: break-word;
 }
 
+.products-body{
+  margin-left:40px;
+  margin-right:40px;
+}
 
 
 .filter-bar{
@@ -172,7 +176,7 @@ header{
 }
 .all{
   margin-bottom: 4px;
-  font-weight: bold;
+   font-weight: bold;
 }
 .select-link{
   background: none;
